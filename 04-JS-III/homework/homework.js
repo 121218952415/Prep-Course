@@ -89,10 +89,10 @@ function agregarNumeros(numeros) {
   // Suma todos los enteros y devuelve el valor
   // Tu código:
   let suma = 0
-  for ( let i = 0;i < numeros.length; i ++){
-   suma += numeros[i];
-  }  
-     return suma;
+  for (let i = 0; i < numeros.length; i++) {
+    suma += numeros[i];
+  }
+  return suma;
 }
 
 
@@ -118,32 +118,36 @@ function numeroMasGrande(numeros) {
       }
     }
     return mayor;
-    
   }
 
 
 function multiplicarArgumentos() {
   // Usa la palabra clave `arguments` para multiplicar
   // todos los argumentos y devolver el producto
-  // Si no se pasan argumentos devuelve 0. Si se pasa
-  // un argumento, simplemente devuélvelo
+  // Si no se pasan argumentos devuelve 0.
+  // Si se pasa un argumento, simplemente devuélvelo
   // Escribe tu código aquí:
-  let profucto = 0
+  let profucto = 1
 
-  for (let i = 0;1 > arguments.length; i++){
-    profucto *= arguments[i]
-    return profucto
-  } 
-    
+  if(arguments.length==0){
+    return 0;
+  }
 
-  return 0
+  if(arguments.length== 1 ){
+    return arguments[0];
+  }
+
+  for (let i = 0; i < arguments.length; i++) {
+    profucto = profucto * arguments[i];
+  }
+  return profucto;
 }
 
-
 function cuentoElementos(arreglo){
-  //Realiza una función que retorne la cantidad de los elementos del arreglo cuyo valor es mayor a 18.
+  //Realiza una función que retorne la cantidad de los
+  // elementos del arreglo cuyo valor es mayor a 18.
   //Escribe tu código aquí
-
+  
 }
 
 
