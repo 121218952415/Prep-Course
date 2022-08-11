@@ -161,7 +161,7 @@ function diaDeLaSemana(numeroDeDia) {
   //Realiza una función que dado el número del día de la semana,
   // retorne: Es fin de semana
   //si el día corresponde a Sábado o Domingo y “Es dia Laboral” 
-  //en caso contrario. 
+  //en caso contrario.
   //Escribe tu código aquí 
   if (numeroDeDia === 7 || numeroDeDia === 1) {
     return "Es fin de semana";
@@ -175,41 +175,93 @@ function empiezaConNueve(n) {
   //un número entero n. Debe retornar true si el entero 
   //inicia con 9 y false en otro caso.
   //Escribe tu código aquí
+
+  let numero9 = n.toString();
+  if (numero9[0] == 9) {
+    return true;
+  }
+    return false;
   
 }
-
-
 function todosIguales(arreglo) {
-  //Escriba la función todosIguales, que indique si todos los elementos de un arreglo son iguales:
+  //Escriba la función todosIguales, que indique si todos
+  // los elementos de un arreglo son iguales:
   //retornar true, caso contrario retornar false.
   //Escribe tu código aquí  
+    let noloes = arreglo [1];
+    for (let i = 0; i < arreglo.length; i++){
+      if (arreglo[i] != noloes ){
+        return false  ;
+      }
+      return  true ; 
+    }
+  }
   
-} 
-
 
 function mesesDelAño(array) {
-  //Dado un array que contiene algunos meses del año desordenados, recorrer el array buscando los meses de 
-  // "Enero", "Marzo" y "Noviembre", guardarlo en nuevo array y retornarlo.
-  //Si alguno de los meses no está, devolver: "No se encontraron los meses pedidos"
+  //Dado un array que contiene algunos meses del año
+  // desordenados, recorrer el array buscando los meses de 
+  // "Enero", "Marzo" y "Noviembre", guardarlo en
+  // nuevo array y retornarlo.
+  //Si alguno de los meses no está, devolver: 
+  //"No se encontraron los meses pedidos"
   // Tu código:
+  let nuevoarray = []
+  for (let i = 0; i <= array.length; i++) {
+    if (array[i] === "Enero") {
+      nuevoarray.push(array[i]);
+    }
+    if (array[i] === "Marzo") {
+      nuevoarray.push(array[i]);
+    }
+    if (array[i] === "Noviembre") {
+      nuevoarray.push(array[i]);
+    }
+  }
+  if (nuevoarray.length < 3) {
+    return "No se encontraron los meses pedidos";
+  }
+  else {
+    return nuevoarray;
+  }
 }
 
+    
 
 function mayorACien(array) {
-  //La función recibe un array con enteros entre 0 y 200. Recorrer el array y guardar en un nuevo array sólo los
-  //valores mayores a 100 (no incluye el 100). Finalmente devolver el nuevo array.
+  //La función recibe un array con enteros entre 0 y 200.
+  // Recorrer el array y guardar en un nuevo array sólo los
+  //valores mayores a 100 (no incluye el 100). 
+  //Finalmente devolver el nuevo array.
   // Tu código:
+  let jilo = []
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] > 100) {
+      jilo.push(array[i])
+    }
+  }
+  return jilo;
+
 }
 
 
 function breakStatement(numero) {
-  //Iterar en un bucle aumentando en 2 el numero recibido hasta un límite de 10 veces.
+  //Iterar en un bucle aumentando en 2 el numero recibido 
+  //hasta un límite de 10 veces.
   //Guardar cada nuevo valor en un array. 
   //Devolver el array
-  //Si en algún momento el valor de la suma y la cantidad de iteraciones coinciden, debe interrumpirse la ejecución y 
+  //Si en algún momento el valor de la suma yla cantidad de 
+  //iteraciones coinciden, debe interrumpirse la ejecución y 
   //devolver: "Se interrumpió la ejecución"
   //Pista: usá el statement 'break'
   // Tu código:
+  let i  = 0;
+  do {
+    numero+=5
+    i++
+  }while (i < 8)
+   return numero;
+
 }
 
 
