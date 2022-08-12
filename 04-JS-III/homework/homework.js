@@ -102,8 +102,12 @@ function promedioResultadosTest(resultadosTest) {
   // Itera (en un bucle) los elementos del array, calcula y
   // devuelve el promedio de puntajes
   // Tu código:
-  return agregarNumeros(resultadosTest) / resultadosTest.length;
-
+  let mou = 0
+  let paramer = resultadosTest.length
+  for (let i = 0; i < resultadosTest.length; i++){
+     mou = mou + resultadosTest[i]
+  }
+      return mou/paramer
 }
 
 
@@ -255,24 +259,44 @@ function breakStatement(numero) {
   //devolver: "Se interrumpió la ejecución"
   //Pista: usá el statement 'break'
   // Tu código:
-  let i  = 0;
-  do {
-    numero+=5
-    i++
-  }while (i < 8)
-   return numero;
-
+  let arraynew = []
+  var retulte = numero
+  for (var i = 0; i < 10; i++) {
+    retulte = retulte + 2;
+    if (retulte === i) break
+    else { arraynew.push(retulte) }
+  }
+  if (i < 10) {
+    return "Se interrumpió la ejecución";
+  }
+  else {
+    return arraynew;
+  }
 }
 
 
 function continueStatement(numero) {
-  //Iterar en un bucle aumentando en 2 el numero recibido hasta un límite de 10 veces.
+  //Iterar en un bucle aumentando en 2 
+  //el numero recibido hasta un límite de 10 veces.
   //Guardar cada nuevo valor en un array.    
   //Devolver el array
-  //Cuando el número de iteraciones alcance el valor 5, no se suma en ese caso y se continua con la siguiente iteración
+  //Cuando el número de iteraciones alcance el valor 5, no se
+  // suma en ese caso y se continua con la siguiente iteración
   //Pista: usá el statement 'continue'
   // Tu código:
+  let arraytt = []
+  var sumakk = numero
+  for (var i = 0; i < 10; i++) {
+    if ( i  === 5) { continue }
+    else {
+      sumakk = sumakk + 2
+      arraytt.push(sumakk)
+    }
+  }
+  return arraytt;
 }
+
+
 
 
 // No modificar nada debajo de esta línea
