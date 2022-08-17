@@ -28,7 +28,7 @@ function agregarPropiedad (objeto, property) {
   // NOTA: El nombre de la propiedad no es "propiedad",
   // el nombre es el valor del argumento llamado "property" (una cadena/string)
   // Tu código:
-  objeto.property = null
+  objeto[property] = null
   return objeto 
 
 }
@@ -91,23 +91,38 @@ function tieneEmail (usuario) {
 }
 
 function tienePropiedad (objeto, propiedad) {
-  // Devuelve "true" si el objeto (parámetro "objeto") tiene una propiedad (key) cuyo nombre es igual al valor del argumento "propiedad"
+  // Devuelve "true" si el objeto (parámetro "objeto") tiene
+  // una propiedad (key) cuyo nombre es igual al valor del argumento "propiedad"
   // "propiedad" es un string
   // De lo contrario, devuelve "false"
   // Tu código:
+  if (objeto[propiedad])
+    return true
+  else { return false }
+
 }
 
 function verificarPassword (usuario, password) {
-  // Comprueba si la "password" enviada coincide con la propiedad "password" del objeto "usuario"
+  // Comprueba si la "password" enviada coincide con la propiedad
+  //  "password" del objeto "usuario"
   // Devuelve "true" si coinciden
   // De lo contrario, devuelve "false"
   // Tu código:
+  if (usuario.password === password)
+    return true
+  else {
+    return false
+  }
+
 }
 
 function actualizarPassword (usuario, nuevaPassword) {
-  // Reemplaza la contraseña existente en el objeto "usuario" con el valor de "nuevagPassword"
+  // Reemplaza la contraseña existente en el objeto "usuario"
+  // con el valor de "nuevaPassword"
   // Devuelve el objeto
   // Tu código:
+    usuario.password = nuevaPassword
+    return usuario;
 }
 
 function agregarAmigo (usuario, nuevoAmigo) {
@@ -115,6 +130,8 @@ function agregarAmigo (usuario, nuevoAmigo) {
   // Agrega "nuevoAmigo" al final de ese array
   // Devuelve el objeto "usuario"
   // Tu código:
+   usuario.amigos.push(nuevoAmigo);
+    return usuario
 }
 
 function pasarUsuarioAPremium (usuarios) {
@@ -123,20 +140,35 @@ function pasarUsuarioAPremium (usuarios) {
   // Define cada propiedad "esPremium" de cada objeto como "true"
   // Devuelve el array de usuarios
   // Tu código:
+  for (let i = 0; i < usuarios.length; i++){
+    usuarios[i].esPremium = true;
+  }
+    return usuarios
 }
 
 function sumarLikesDeUsuario (usuario) {
-  // "usuario" tiene una propiedad llamada "posts" que es un array
+  // "usuario" tiene una propiedad llamada "posts" que es un 
+  //array
   // "posts" es un array de objetos "post"
-  // Cada objeto "post" tiene una propiedad llamada "likes" que es un entero (int/integer)
+  // Cada objeto "post" tiene una propiedad llamada "likes"
+  // que es un entero (int/integer)
   // Suma todos los likes de todos los objetos "post"
   // Devuelve la suma
   // Tu código:
+   let sumer = 0
+ for(let i = 0; i < usuario.posts.length; i ++){
+   sumer = sumer + usuario.posts[i].likes
+ }
+ return sumer 
 }
 
+
 function agregarMetodoCalculoDescuento (producto) {
-  // Agregar un método (función) al objeto "producto" llamado "calcularPrecioDescuento"
-  // Este método debe multiplicar el "precio" del "producto" ("producto.precio" o "producto[precio]") y "porcentajeDeDescuento" para obtener el descuento
+  // Agregar un método (función) al objeto "producto" llamado 
+  //"calcularPrecioDescuento"
+  // Este método debe multiplicar el "precio" del "producto" 
+  // ("producto.precio" o "producto[precio]") y "porcentajeDeDescuento"
+  // para obtener el descuento
   // El método resta el descuento del precio y devuelve el precio con descuento
   // Devuelve el objeto "producto" al final de la función
   // Ejemplo:
@@ -144,7 +176,14 @@ function agregarMetodoCalculoDescuento (producto) {
   // producto.porcentajeDeDescuento -> 0.2 (o simplemente ".2")
   // producto.calcularPrecioDescuento() -> 20 - (20 * 0.2)
   // Tu código:
+  
+  producto.calcularPrecioDescuento = function () {
+    var descuento = producto["precio"] * producto.porcentajeDeDescuento;
+    var  nuevo = producto["precio"] - descuento;
+    return nuevo
+  }
 
+  return producto;
 }
 
 // No modificar nada debajo de esta línea
