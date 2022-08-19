@@ -41,7 +41,9 @@ function forEach(array, cb) {
   // Pista: Estarás invocando a `cb` varias veces (una por cada valor en la matriz)
   //Tu código:
  let finarray = []
-  
+  let rra = array.for(
+    
+  )
 }
 
 function map(array, cb) {

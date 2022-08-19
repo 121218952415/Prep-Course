@@ -212,22 +212,16 @@ function mesesDelAño(array) {
   // Tu código:
   let nuevoarray = []
   for (let i = 0; i <= array.length; i++) {
-    if (array[i] === "Enero") {
-      nuevoarray.push(array[i]);
-    }
-    if (array[i] === "Marzo") {
-      nuevoarray.push(array[i]);
-    }
-    if (array[i] === "Noviembre") {
+    if (array[i] === "Enero" || array[i] === "Marzo" || array[i] === "Noviembre") {
       nuevoarray.push(array[i]);
     }
   }
   if (nuevoarray.length < 3) {
     return "No se encontraron los meses pedidos";
   }
-  else {
-    return nuevoarray;
-  }
+
+  return nuevoarray;
+
 }
 
     
@@ -264,14 +258,13 @@ function breakStatement(numero) {
   for (var i = 0; i < 10; i++) {
     retulte = retulte + 2;
     if (retulte === i) break
-    else { arraynew.push(retulte) }
+   arraynew.push(retulte) 
   }
   if (i < 10) {
     return "Se interrumpió la ejecución";
   }
-  else {
     return arraynew;
-  }
+  
 }
 
 
@@ -284,16 +277,17 @@ function continueStatement(numero) {
   // suma en ese caso y se continua con la siguiente iteración
   //Pista: usá el statement 'continue'
   // Tu código:
-  let arraytt = []
+  // 
+  let array = []
   var sumakk = numero
-  for (var i = 0; i < 10; i++) {
-    if ( i  === 5) { continue }
-    else {
-      sumakk = sumakk + 2
-      arraytt.push(sumakk)
+  for (var i = 1; i <= 10; i++) {
+    if (i === 5){
+       continue
     }
+    sumakk = sumakk + 2
+    array.push(sumakk)
   }
-  return arraytt;
+  return array;
 }
 
 
