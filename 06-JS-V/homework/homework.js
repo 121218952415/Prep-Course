@@ -82,7 +82,7 @@ class Persona {
     this.edad = edad
     this.direccion = direccion
     this.detalle = function () {
-      return this
+      return this;
     }
     //this.prototype.detalle = function () {
       //return this;
@@ -96,8 +96,9 @@ function crearInstanciaPersona(nombre, apellido, edad, dir) {
   //Recibirá los valores "Juan", "Perez", 22, "Saavedra 123" para sus respectivas
   //propiedades
   //Devolver la nueva persona creada
-  let juan = new Persona ("Juan","Perez",22,"Saveedra 123")
-   return juan
+   return new Persona (nombre,apellido,edad,dir)
+   
+
 }
   
 function agregarMetodo() {
