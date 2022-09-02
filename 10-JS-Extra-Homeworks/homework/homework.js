@@ -26,13 +26,15 @@ function numberOfCharacters(string) {
   //en formato par clave-valor.
   //Ej: Recibe ---> "adsjfdsfsfjsdjfhacabcsbajda" || Devuelve ---> { a: 5, b: 2, c: 2, d: 4, f: 4, h:1, j: 4, s: 5 } 
   //Escribe tu código aquí
-  string.filter((valor )=>{ })
+  let resultado = {}
+  for (let i = 0; i < string.length; i++) {
+    if (!resultado.hasOwnProperty(string[i])) {
+      resultado[string[i]] = 0;
+    }
+    resultado[string[i]] += 1;
+  }
 
-
-
-
-
-
+  return resultado
 }
 
 
@@ -41,20 +43,36 @@ function capToFront(s) {
   //al principio de la palabra.
   //Ejemplo: soyHENRY -> HENRYsoy
   //Escribe tu código aquí
-
-
+  let mayus = "";
+  let min = "";
+  for ( let i =  0 ; i < s.length; i ++){
+    if (s[i] === s[i].toUpperCase()){
+      mayus += s[i];
+    }
+    else {min += s[i]
+    }  
+  }
+ return mayus+min;
 }
 
 
 function asAmirror(str) {
   //La función recibe una frase. 
-  //Escribe una función que tome la frase recibida y la devuelva de modo tal que se pueda leer de izquierda a derecha 
+  //Escribe una función que tome la frase recibida y la devuelva de modo tal que
+  // se pueda leer de izquierda a derecha 
   //pero con cada una de sus palabras invertidas, como si fuera un espejo.
-  //Ej: Recibe ---> "The Henry Challenge is close!" || Devuelve ---> "ehT yrneH egnellahC si !esolc"
+  //Ej: Recibe ---> "The Henry Challenge is close!" 
+  // || Devuelve ---> "ehT yrneH egnellahC si !esolc"
   //Escribe tu código aquí
-} 
-
-
+  let stri = str.split(" ")
+  let palabrarever = "";
+  for (let i = stri.length - 1; i >= 0; i--) {
+    for (let j = stri[i].length - 1; j >= 0; j--) {
+      palabrarever = palabrarever + stri[i].charAt(j);
+    }
+  }
+  return palabrarever
+}
 function capicua(numero){
   //Escribe una función, la cual recibe un número y determina si es o no capicúa.
   //La misma debe retornar: "Es capicua" si el número se número que se lee igual de 
